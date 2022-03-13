@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, avoid_print
 
+import 'package:delta/campaigns.dart';
 import 'package:flutter/material.dart';
 
 import 'main.dart';
@@ -44,8 +45,8 @@ class _intensionState extends State<Intensions> {
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const MyApp())),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Campaigns())),
           ),
           title: const Text("Intenstion"),
         ),
@@ -311,7 +312,8 @@ class _intensionState extends State<Intensions> {
                         Container(
                           child: ElevatedButton(
                             onPressed: () {
-                              print('Submitted');
+                              Navigator.pushReplacementNamed(
+                                  context, "findProperty");
                             },
                             child: const Text("submit"),
                           ),

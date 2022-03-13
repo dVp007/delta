@@ -1,3 +1,4 @@
+import 'package:delta/property-address.dart';
 import 'package:flutter/material.dart';
 import 'intensions.dart';
 import 'campaigns.dart';
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         "intensions": (context) => Intensions(),
         "campaigns": (context) => Campaigns(),
         "issues": (context) => Issues(),
-        "findProperty": (context) => Property()
+        "findProperty": (context) => Property(),
+        "propertyAddress": (context) => PropertyAddress()
       },
     );
   }

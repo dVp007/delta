@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, must_be_immutable
 
 import 'package:delta/intensions.dart';
+import 'package:delta/property-address.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -23,7 +24,7 @@ class _issuesState extends State<Issues> {
           leading: IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Intensions()))),
+                  MaterialPageRoute(builder: (context) => PropertyAddress()))),
           title: const Text("Issues"),
         ),
         body: Container(
@@ -100,7 +101,8 @@ class _issuesState extends State<Issues> {
                       Container(
                         child: ElevatedButton(
                           onPressed: () {
-                            print('Submitted');
+                            Navigator.pushReplacementNamed(
+                                context, "campaigns");
                           },
                           child: const Text("submit"),
                         ),

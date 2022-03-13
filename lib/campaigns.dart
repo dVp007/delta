@@ -1,4 +1,5 @@
 import 'package:delta/intensions.dart';
+import 'package:delta/issues.dart';
 import 'package:flutter/material.dart';
 import './data/question.dart';
 import 'model/question.dart';
@@ -24,7 +25,7 @@ class _campaignState extends State<Campaigns> {
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Intensions())),
+                context, MaterialPageRoute(builder: (context) => Issues())),
           ),
           title: const Text("Campaigns"),
         ),
@@ -108,7 +109,8 @@ class _campaignState extends State<Campaigns> {
                       Container(
                         child: ElevatedButton(
                           onPressed: () {
-                            print('Submitted');
+                            Navigator.pushReplacementNamed(
+                                context, "intensions");
                           },
                           child: const Text("submit"),
                         ),
