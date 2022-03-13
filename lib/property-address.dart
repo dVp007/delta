@@ -57,15 +57,80 @@ class _propertyAddressState extends State<PropertyAddress> {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          SizedBox(
+                            height: 40,
+                            child: Center(
+                                child:
+                                    Text('3, Elliot Square, london NW3 3SU')),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const SizedBox(
                             height: 40,
-                            child: Center(
-                                child: Text('203, strone road, london E78ET')),
+                            child:
+                                Center(child: Text('Voting Number : 18772We')),
                           ),
                           Container(
                             margin: EdgeInsets.only(left: 20),
-                            child: const Center(child: Text('Voted: 9/9')),
+                            child: const Center(
+                                child: Text('Voting History: 9/9')),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () =>
+                    {Navigator.pushReplacementNamed(context, "issues")},
+                child: Card(
+                  child: Column(
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                              width: 40,
+                              height: 40,
+                              color: Colors.yellow,
+                              child: Center(child: Text('Ch')),
+                              margin: const EdgeInsets.all(15)),
+                          const Text(
+                            'Nigel Rumble',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 24),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          SizedBox(
+                            height: 40,
+                            child: Center(
+                                child:
+                                    Text('3, Elliot Square, london NW3 3SU')),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(
+                            height: 40,
+                            child:
+                                Center(child: Text('Voting Number : 18772We')),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: const Center(
+                                child: Text('Voting History: 9/9')),
                           ),
                         ],
                       )

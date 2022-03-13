@@ -31,43 +31,59 @@ class _propertyState extends State<Property> {
           child: Column(mainAxisAlignment: MainAxisAlignment.start, children: [
             Container(
               width: 360,
-              margin: const EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 15),
               child: DropdownSearch<String>(
                   mode: Mode.DIALOG,
-                  items: ["Brazil", "Tunisia", 'Canada'],
+                  label: 'Wards',
+                  items: ["Premrose Hill", "Bloomsbury", 'Belsize'],
                   onChanged: print,
                   showSearchBox: true,
-                  selectedItem: "Brazil"),
+                  selectedItem: "Premrose Hill"),
             ),
             Container(
               width: 360,
-              margin: const EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 15),
               child: DropdownSearch<String>(
                   mode: Mode.DIALOG,
-                  items: ["Brazil", "Tunisia", 'Canada'],
+                  label: 'District Codes',
+                  items: ["TA", "TB", 'TC', 'QA', 'QB', 'QC'],
                   onChanged: print,
                   showSearchBox: true,
-                  selectedItem: "Brazil"),
+                  selectedItem: "TA"),
             ),
             Container(
               width: 360,
-              margin: const EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 15),
               child: DropdownSearch<String>(
                   mode: Mode.DIALOG,
-                  items: ["Brazil", "Tunisia", 'Canada'],
+                  label: 'Streets',
+                  items: const [
+                    "Adelaide Road",
+                    "Briary Close",
+                    'Brocas Close',
+                    'Elliot Square',
+                    'Elsworthy Rise'
+                  ],
                   onChanged: print,
                   showSearchBox: true,
-                  selectedItem: "Brazil"),
+                  selectedItem: "Elliot Square"),
             ),
             Container(
               width: 360,
-              margin: const EdgeInsets.only(bottom: 10),
+              margin: const EdgeInsets.only(bottom: 15),
               child: DropdownSearch<String>(
+                  label: 'Properties',
                   mode: Mode.DIALOG,
-                  items: ["Brazil", "Tunisia", 'Canada'],
+                  items: const [
+                    "1 Elliot Square, London NW 3SU",
+                    "3 Elliot Square, London NW 3SU",
+                    '5 Elliot Square, London NW 3SU',
+                    '6 Elliot Square, London NW 3SU',
+                    '7 Elliot Square, London NW 3SU'
+                  ],
                   onChanged: print,
                   showSearchBox: true,
-                  selectedItem: "Brazil"),
+                  selectedItem: "3 Elliot Square, London NW 3SU"),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

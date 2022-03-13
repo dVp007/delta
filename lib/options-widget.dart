@@ -36,10 +36,7 @@ class OptionsWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
-          children: [
-            buildAnswer(option),
-            buildSolution(question.selectedOption, option),
-          ],
+          children: [buildAnswer(option)],
         ),
       ),
     );
@@ -60,24 +57,13 @@ class OptionsWidget extends StatelessWidget {
         ]),
       );
 
-  Widget buildSolution(Option solution, Option answer) {
-    if (solution == answer) {
-      return Text(
-        question.solution,
-        style: const TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
-      );
-    } else {
-      return Container();
-    }
-  }
-
   Color getColorForOption(Option option, Question question) {
     final isSelected = option == question.selectedOption;
 
     if (!isSelected) {
       return Colors.grey.shade200;
     } else {
-      return option.isCorrect ? Colors.green : Colors.red;
+      return Colors.green;
     }
   }
 }
