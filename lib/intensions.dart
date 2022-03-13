@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 // ignore: must_be_immutable
 class Intensions extends StatefulWidget {
   Intensions({Key? key}) : super(key: key);
@@ -42,7 +44,8 @@ class _intensionState extends State<Intensions> {
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const MyApp())),
           ),
           title: const Text("Intenstion"),
         ),

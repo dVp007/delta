@@ -1,3 +1,4 @@
+import 'package:delta/intensions.dart';
 import 'package:flutter/material.dart';
 import './data/question.dart';
 import 'model/question.dart';
@@ -22,7 +23,8 @@ class _campaignState extends State<Campaigns> {
         appBar: AppBar(
           leading: IconButton(
             icon: const Icon(Icons.arrow_back, color: Colors.white),
-            onPressed: () => Navigator.of(context).pop(),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Intensions())),
           ),
           title: const Text("Campaigns"),
         ),
@@ -73,13 +75,43 @@ class _campaignState extends State<Campaigns> {
                     children: [
                       SizedBox(
                         width: 300,
-                        height: 550,
+                        height: 400,
                         child: PageView.builder(
                             itemCount: questions.length,
                             itemBuilder: (context, index) {
                               Question question = questions[index];
                               return buildQuestion(question: question);
                             }),
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(
+                                context, "intensions");
+                          },
+                          child: const Text("Intensions"),
+                        ),
+                      ),
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            Navigator.pushReplacementNamed(context, "issues");
+                          },
+                          child: const Text("Issues"),
+                        ),
+                      ),
+                      Container(
+                        child: ElevatedButton(
+                          onPressed: () {
+                            print('Submitted');
+                          },
+                          child: const Text("submit"),
+                        ),
                       )
                     ],
                   )

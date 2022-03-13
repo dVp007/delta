@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'intensions.dart';
 import 'campaigns.dart';
+import 'issues.dart';
+import './property.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +21,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "": (context) => const MyApp(),
         "intensions": (context) => Intensions(),
-        "campaigns": (context) => Campaigns()
+        "campaigns": (context) => Campaigns(),
+        "issues": (context) => Issues(),
+        "findProperty": (context) => Property()
       },
     );
   }
@@ -52,28 +57,44 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      body: Column(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          children: [
-            Container(
-                height: 150.0,
-                width: 190.0,
-                padding: const EdgeInsets.only(top: 40),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(200),
-                ),
-                child: Center(
-                  child: Image.asset('assets/logo.png'),
-                ))
-          ]),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, "intensions");
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(
+          'assets/login.svg',
+          semanticsLabel: 'Acme Logo',
+          height: 150,
+          width: 100,
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            decoration: InputDecoration(
+              border: OutlineInputBorder(),
+              hintText: 'User Name',
+            ),
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+          child: TextField(
+            obscureText: true,
+            enableSuggestions: false,
+            autocorrect: false,
+            decoration: InputDecoration(
+                border: OutlineInputBorder(), hintText: 'Password'),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 220),
+          width: 150,
+          child: ElevatedButton(
+            onPressed: () =>
+                {Navigator.pushReplacementNamed(context, 'findProperty')},
+            child: const Text("Login"),
+          ),
+        )
+      ],
+    ));
   }
 }
